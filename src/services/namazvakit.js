@@ -4,16 +4,16 @@ const API_BASE_URL = 'https://api.collectapi.com/pray/all?data.city=istanbul';
 const API_KEY = '';
 
 const api = axios.create({
-  baseURL: API_BASE_URL, // baseURL olarak düzeltildi
+  baseURL: API_BASE_URL, 
   headers: {
-    Authorization: `Apikey ${API_KEY}`, // CollectAPI için "Apikey" kullanılır
-    'Content-Type': 'application/json', // application.json yerine application/json
+    Authorization: `Apikey ${API_KEY}`, 
+    'Content-Type': 'application/json', 
   },
 });
 
 const namazq = async (endpoint = '') => {
   try {
-    const response = await api.get(endpoint); // endpoint parametresi ile istek yap
+    const response = await api.get(endpoint); 
     return response.data;
   } catch (error) {
     console.error('API Error:', error);
@@ -21,4 +21,4 @@ const namazq = async (endpoint = '') => {
   }
 };
 
-export default namazq; // Doğru şekilde export edildi
+export default namazq; 
